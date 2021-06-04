@@ -37,7 +37,7 @@ class App extends React.Component {
   }
 
   calCelsius(temp) {
-    let cell = Math.floor((temp - 273.15)*(9/5) +32)
+    let cell = Math.floor((temp - 273.15) * (9 / 5) + 32)
     return cell;
   }
 
@@ -71,7 +71,7 @@ class App extends React.Component {
 
   getWeather = async (e) => {
     e.preventDefault();
-
+    
     const city = e.target.elements.city.value
     const country = e.target.elements.country.value
 
@@ -90,35 +90,39 @@ class App extends React.Component {
         temp_max: this.calCelsius(response.main.temp_max),
         temp_min: this.calCelsius(response.main.temp_min),
         description: response.weather[0].description,
-        error:false,
+        error: false,
         lat: response.coord.lat,
-        long:response.coord.lon
+        long: response.coord.lon
 
       })
       this.get_Weathericon(this.weatherIcon, response.weather[0].id)
-    }else{
-      this.setState({error:true});
+    } else {
+      this.setState({ error: true });
     }
 
   }
+
+
 
   state = {}
   render() {
     return (
       <div className="App">
-        <Form loadweather={this.getWeather} error={this.state.error}/>
-        <Weather
-          city={this.state.city}
-          country={this.state.country}
-          temp_celsius={this.state.celsius}
-          temp_max={this.state.temp_max}
-          temp_min={this.state.temp_min}
-          description={this.state.description}
-          weatherIcon={this.state.icon}
-          lat={this.state.lat}
-          long={this.state.long}
+        <div className="weather-container ">
+          <Form loadweather={this.getWeather} error={this.state.error} />
+          <Weather
+            city={this.state.city}
+            country={this.state.country}
+            temp_celsius={this.state.celsius}
+            temp_max={this.state.temp_max}
+            temp_min={this.state.temp_min}
+            description={this.state.description}
+            weatherIcon={this.state.icon}
+            lat={this.state.lat}
+            long={this.state.long}
 
-        />
+          />
+        </div>
       </div>
     );
   }

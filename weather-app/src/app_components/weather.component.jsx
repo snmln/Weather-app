@@ -2,9 +2,9 @@ import React from 'react';
 
 const Weather = (props) => {
     return (
-        <div className="container">
+        <div className="container ">
             <div className="cards pt-4">
-                <div className="row">
+                <div className="row d-flex justify-content-center">
                     <div className=" col d-inline">
                         <div className="display-4 pb-2">{props.city}</div>
                         {props.lat && props.long ?

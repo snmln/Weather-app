@@ -1,11 +1,16 @@
 import React from 'react';
 import "./form.style.css"
+
+
+
+
 const Form = props => {
     return (
-        <div className="container">
+        <div className="container ">
             <div>{props.error ? error():null}</div>
+            
             <form onSubmit={props.loadweather}>
-            <div className="row">
+            <div className="row d-flex justify-content-center">
                 <div className="col-md-3  py-4">
                     <input
                         type="text"

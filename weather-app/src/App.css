@@ -1,6 +1,15 @@
 .App {
+  padding: 3rem;
+  text-align: center;
+  height: 100vh;
 }
-
+.weather-container{
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
